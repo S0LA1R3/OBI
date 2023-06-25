@@ -1,2 +1,2 @@
-# OBI
-Codes for OBI (Brazilian Informatics Olympiad)
+# Competitive Programming
+Study codes for programming competitions
