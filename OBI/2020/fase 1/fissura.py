@@ -18,50 +18,50 @@ for x in range(len(matriz)):
 nova = True
 while nova:
     nova = False
-    matrizCagada = []
+    matrizInvertida = []
     for y in range(len(matriz[0])):
         palavra = ''
         for x in matriz:
             palavra += x[y]
-        matrizCagada.append(palavra)
+        matrizInvertida.append(palavra)
     matriz.clear()
 
-    for x in range(len(matrizCagada)):
+    for x in range(len(matrizInvertida)):
         palavra = ''
-        for y in range(len(matrizCagada[x])):
+        for y in range(len(matrizInvertida[x])):
             if y == 0:
-                palavra += matrizCagada[x][y]
+                palavra += matrizInvertida[x][y]
                 continue
-            if matrizCagada[x][y] == '*':
-                palavra += matrizCagada[x][y]
+            if matrizInvertida[x][y] == '*':
+                palavra += matrizInvertida[x][y]
                 continue
-            if matrizCagada[x][y - 1] == '*' and int(matrizCagada[x][y]) <= int(tamanho[1]):
+            if matrizInvertida[x][y - 1] == '*' and int(matrizInvertida[x][y]) <= int(tamanho[1]):
                 palavra += '*'
             else:
-                palavra += matrizCagada[x][y]
-        matrizCagada[x] = palavra
+                palavra += matrizInvertida[x][y]
+        matrizInvertida[x] = palavra
 
-        for x in range(len(matrizCagada)):
+        for x in range(len(matrizInvertida)):
             palavra = ''
-            for y in range(len(matrizCagada[x])-1, -1, -1):
-                if y == len(matrizCagada[x])-1:
-                    palavra += matrizCagada[x][y]
+            for y in range(len(matrizInvertida[x])-1, -1, -1):
+                if y == len(matrizInvertida[x])-1:
+                    palavra += matrizInvertida[x][y]
                     continue
-                if matrizCagada[x][y] == '*':
-                    palavra += matrizCagada[x][y]
+                if matrizInvertida[x][y] == '*':
+                    palavra += matrizInvertida[x][y]
                     continue
-                if matrizCagada[x][y + 1] == '*' and int(matrizCagada[x][y]) <= int(tamanho[1]):
+                if matrizInvertida[x][y + 1] == '*' and int(matrizInvertida[x][y]) <= int(tamanho[1]):
                     palavra += '*'
                 else:
-                    palavra += matrizCagada[x][y]
-            matrizCagada[x] = palavra
+                    palavra += matrizInvertida[x][y]
+            matrizInvertida[x] = palavra
 
-    for y in range(len(matrizCagada[0])):
+    for y in range(len(matrizInvertida[0])):
         palavra = ''
-        for x in matrizCagada:
+        for x in matrizInvertida:
             palavra += x[y]
         matriz.append(palavra)
-    matrizCagada.clear()
+    matrizInvertida.clear()
 
     for x in range(len(matriz)):
         palavra = ''
