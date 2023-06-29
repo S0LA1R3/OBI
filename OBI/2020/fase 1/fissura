@@ -1,0 +1,32 @@
+tamanho = input().split()
+matriz = []
+for c in range(int(tamanho[0])):
+  matriz.append(input())
+for x in matriz:
+  palavra = ''
+  for y in x:
+    if int(y) <= int(tamanho[1]):
+      palavra += '*'
+    else:
+      palavra += y
+      break
+  matriz[matriz.index(x)] = palavra
+for c in range(len(matriz)):
+  print(c)
+  palavra = ''
+  for d in range(len(matriz[c])):
+    print(d)
+    if c == len(matriz)-1:
+      if matriz[c-1][d] == '*' and matriz[c][d] != '*':
+        if int(matriz[c][d]) <= int(tamanho[1]):
+          palavra += '*'
+      else:
+        palavra += matriz[c][d]
+    else:
+      if matriz[c+1][d] == '*' and matriz[c][d] != '*':
+        if int(matriz[c][d]) <= int(tamanho[1]):
+          palavra += '*'
+      else:
+        palavra += matriz[c][d]
+  matriz[c] = palavra
+print(matriz)
